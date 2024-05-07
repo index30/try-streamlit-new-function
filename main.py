@@ -6,6 +6,13 @@ def approve_button1():
 
 def approve_button2():
     st.session_state["ok_button2"] = True
+    
+@st.experimental_dialog("承認確認")
+def approve_button3():
+    st.write("本当に良い？")
+    if st.button("OKですって"):
+        st.session_state["ok_button3"] = True
+        st.rerun()
 
 if button1:
     st.markdown("本当に良い？")
@@ -19,3 +26,10 @@ with st.popover("ポップオーバーのボタン"):
     st.button("OKだよ", on_click=approve_button2, key="2")
 if st.session_state.get("ok_button2", False):
     st.success("承認されました2")
+
+if "ok_button3" not in st.session_state:
+    if st.button("承認"):
+        approve_button3()
+
+if st.session_state.get("ok_button3", False):
+    st.success("承認されました3")
