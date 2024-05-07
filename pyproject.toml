@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "try-streamlit-new-function"
+version = "0.1.0"
+description = ""
+authors = ["yusei <realthingshakes25@gmail.com>"]
+readme = "README.md"
+packages = [{include = "try_streamlit_new_function"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.34.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
